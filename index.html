@@ -4,105 +4,33 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="robots" content="noindex,nofollow">
-<meta name="referrer" content="strict-origin-when-cross-origin">
-<meta name="theme-color" content="#081a16">
+<meta name="theme-color" content="#102b25">
+<meta name="description" content="Краснолесье — семь секунд в атмосфере Роминтской пущи. Откройте Виштынецкий экомузей.">
 <title>Краснолесье · Виштынецкий экомузей</title>
-<meta name="description" content="Краснолесье. Путешествие в мир природы и истории Виштынецкого края.">
+<noscript><meta http-equiv="refresh" content="7;url=https://vishtynets.ru/"></noscript>
 <style>
-:root{color-scheme:dark;--cream:#f7f3e7;--mist:#b9d1c2;--gold:#dfc68f}
-*{box-sizing:border-box}
-html,body{margin:0;min-height:100%;background:#081a16}
-body{min-height:100svh;display:grid;place-items:center;overflow:hidden;color:var(--cream);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
-.scene{position:fixed;inset:0;z-index:0;background:radial-gradient(ellipse 70% 55% at 50% 42%,#2e5947 0%,#132e28 47%,#081a16 100%)}
-.scene:before{content:"";position:absolute;inset:-10%;background:radial-gradient(ellipse 45% 55% at 50% 48%,#c7c7a319,transparent 75%);animation:glow 3s ease-in-out both}
-.scene:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#081a1614 0%,transparent 35%,#081a1699 100%)}
-.ridge{position:absolute;inset:auto -10% 0;height:45%;background:#0b211c;clip-path:polygon(0 67%,7% 57%,12% 62%,19% 39%,26% 58%,34% 26%,41% 53%,49% 20%,56% 49%,64% 29%,71% 55%,80% 36%,87% 60%,94% 42%,100% 57%,100% 100%,0 100%);opacity:.55}
-.ridge.back{height:55%;background:#224538;opacity:.48;transform:translateY(15%) scaleX(-1)}
-.ridge.front{height:35%;opacity:.9;transform:translateY(25%)}
-.orb{position:absolute;left:50%;top:43%;width:min(75vw,600px);aspect-ratio:1;transform:translate(-50%,-50%);border:1px solid #e6f4df18;border-radius:50%;box-shadow:0 0 0 70px #d9e7cf05,0 0 0 140px #d9e7cf03}
-.grain{position:absolute;inset:0;opacity:.14;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.4'/%3E%3C/svg%3E");pointer-events:none}
-main{position:relative;z-index:1;width:min(100%,850px);padding:48px 22px;text-align:center}
-.eyebrow{font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);font-weight:700;animation:rise .65s both}
-.symbol{display:flex;justify-content:center;align-items:center;margin:24px auto 19px;width:76px;height:76px;border:1px solid #e9dfbd65;border-radius:50%;font:40px/1 Georgia,serif;color:#e9dfbd;box-shadow:0 0 55px #b9d1c21b;animation:rise .7s .08s both}
-h1{margin:0;font:400 clamp(44px,8.8vw,100px)/.98 Georgia,"Times New Roman",serif;letter-spacing:-.055em;text-wrap:balance;text-shadow:0 6px 35px #0005;animation:rise .75s .15s both}
-h1 span{display:block;font-style:italic;color:#d5e5d5;font-size:.76em;margin-top:7px}
-.subtitle{font-size:clamp(13px,2vw,17px);line-height:1.65;color:#c7d9cd;margin:25px auto 0;max-width:550px;animation:rise .7s .27s both}
-.rule{height:1px;width:74px;margin:27px auto;background:linear-gradient(90deg,transparent,var(--gold),transparent);animation:rise .7s .35s both}
-.action{display:inline-flex;align-items:center;gap:12px;min-height:52px;padding:0 23px;border:1px solid #f4f0e35c;border-radius:99px;background:#f7f3e712;color:var(--cream);text-decoration:none;font-size:14px;font-weight:650;backdrop-filter:blur(12px);transition:background .2s,transform .2s;animation:rise .7s .43s both}
-.action:hover{background:#f7f3e72d;transform:translateY(-2px)}
-.action:focus-visible{outline:3px solid var(--gold);outline-offset:4px}
-.progress{width:min(230px,75vw);height:2px;background:#ffffff32;margin:30px auto 12px;overflow:hidden;border-radius:9px}
-.progress>span{display:block;width:100%;height:100%;background:linear-gradient(90deg,#a9cdb4,var(--gold));transform-origin:left;animation:shrink 7s linear both}
-#timer{font-size:11px;letter-spacing:.09em;color:#b9d1c2}
-footer{position:fixed;bottom:max(18px,env(safe-area-inset-bottom));left:0;right:0;text-align:center;z-index:1;font-size:10px;letter-spacing:.18em;color:#b9d1c280}
-.notice{margin:15px auto 0;max-width:430px;padding:12px 16px;border:1px solid #ffffff33;border-radius:12px;background:#ffffff12;color:var(--cream);font-size:13px}
-.notice[hidden]{display:none}
-@keyframes rise{from{opacity:0;transform:translateY(17px)}to{opacity:1;transform:translateY(0)}}
-@keyframes glow{from{opacity:.35;transform:scale(.95)}to{opacity:1;transform:scale(1.04)}}
-@keyframes shrink{to{transform:scaleX(0)}}
-@media(max-width:500px){main{padding:32px 20px}.symbol{width:64px;height:64px;font-size:34px;margin-top:20px}.subtitle{margin-top:20px}.rule{margin:22px auto}.progress{margin-top:25px}}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
-
-/* Seven-second cinematic sequence. All visuals are generated by CSS, with no external assets. */
-.stars{position:absolute;inset:0;background-image:radial-gradient(circle,#e7d8a7aa 1px,transparent 2px),radial-gradient(circle,#e7d8a766 1px,transparent 2px);background-size:137px 157px,223px 181px;background-position:30px 22px,97px 86px;opacity:0;animation:starlight 7s ease both}
-.lightbeam{position:absolute;left:50%;top:-25%;height:140%;width:min(45vw,480px);transform:translateX(-50%) rotate(8deg);background:linear-gradient(90deg,transparent,#d6e8bb13 45%,#fff6d327 50%,#d6e8bb13 55%,transparent);filter:blur(24px);opacity:0;animation:beam 7s ease both}
-.scene-label{position:absolute;top:max(26px,env(safe-area-inset-top));left:0;right:0;text-align:center;color:#e5dfb5;font-size:10px;letter-spacing:.25em;opacity:0;font-weight:700}
-.scene-label-one{animation:sceneOne 7s both}.scene-label-two{animation:sceneTwo 7s both}.scene-label-three{animation:sceneThree 7s both}
-.intro-title{position:absolute;top:50%;left:10px;right:10px;transform:translateY(-50%);font:italic 400 clamp(28px,5vw,56px)/1.1 Georgia,serif;color:#e8e7d8;text-shadow:0 5px 30px #0008;opacity:0;pointer-events:none;animation:intro 7s both}
-main>.eyebrow,main>.symbol,main>h1,main>.subtitle,main>.rule,main>.action{animation-duration:7s;animation-delay:0s;animation-name:revealStory;animation-fill-mode:both}
-main>.symbol{animation-name:revealSymbol}
-main>.action{animation-name:revealAction}
-.scene .ridge.back{animation:ridgeBack 7s ease both}
-.scene .ridge.front{animation:ridgeFront 7s ease both}
-.scene .orb{animation:orbReveal 7s ease both}
-@keyframes intro{0%,6%{opacity:0;transform:translateY(calc(-50% + 18px))}13%,27%{opacity:1;transform:translateY(-50%)}37%,100%{opacity:0;transform:translateY(calc(-50% - 20px))}}
-@keyframes revealStory{0%,32%{opacity:0;transform:translateY(22px)}43%,90%{opacity:1;transform:translateY(0)}100%{opacity:.85;transform:translateY(0)}}
-@keyframes revealSymbol{0%,29%{opacity:0;transform:translateY(15px) scale(.7)}42%,100%{opacity:1;transform:translateY(0) scale(1)}}
-@keyframes revealAction{0%,55%{opacity:0;transform:translateY(12px)}67%,100%{opacity:1;transform:translateY(0)}}
-@keyframes sceneOne{0%,4%{opacity:0}10%,22%{opacity:.9}29%,100%{opacity:0}}
-@keyframes sceneTwo{0%,30%{opacity:0}37%,55%{opacity:.9}62%,100%{opacity:0}}
-@keyframes sceneThree{0%,62%{opacity:0}70%,94%{opacity:.9}100%{opacity:0}}
-@keyframes starlight{0%{opacity:.6}35%{opacity:.2}65%,100%{opacity:.55}}
-@keyframes beam{0%,10%{opacity:0;transform:translateX(-70%) rotate(8deg)}45%,85%{opacity:1;transform:translateX(-30%) rotate(-9deg)}100%{opacity:.2;transform:translateX(-20%) rotate(-9deg)}}
-@keyframes ridgeBack{0%{transform:translateY(24%) scaleX(-1)}100%{transform:translateY(9%) scaleX(-1)}}
-@keyframes ridgeFront{0%{transform:translateY(40%)}100%{transform:translateY(21%)}}
-@keyframes orbReveal{0%{opacity:0;transform:translate(-50%,-50%) scale(.8)}45%,100%{opacity:1;transform:translate(-50%,-50%) scale(1.1)}}
-@media(prefers-reduced-motion:reduce){.intro-title,.scene-label{display:none!important}main>.eyebrow,main>.symbol,main>h1,main>.subtitle,main>.rule,main>.action{opacity:1!important;transform:none!important}.progress>span{transform:none!important}}
+:root{color-scheme:dark;--ivory:#f3eedb;--gold:#d4bc83}*{box-sizing:border-box}html,body{margin:0;background:#102b25;color:var(--ivory);font-family:Arial,sans-serif}body{min-height:100svh}a,button{-webkit-tap-highlight-color:transparent}button,a{touch-action:manipulation}button{font:inherit}a:focus-visible,button:focus-visible{outline:3px solid #ffe5a5;outline-offset:6px}.experience{position:relative;isolation:isolate;min-height:100svh;overflow:hidden;display:flex;flex-direction:column}.landscape{position:absolute;inset:0;z-index:-2;overflow:hidden;background:#193c31}.forest{position:absolute;inset:-5%;background:url('forest.v3.svg') center 54%/cover;animation:camera 7s cubic-bezier(.2,.4,.3,1) both}.rays{position:absolute;inset:-30%;background:conic-gradient(from 170deg at 63% 0%,transparent 0deg,#ffedb527 6deg,transparent 10deg,#ffedb512 18deg,transparent 24deg);mix-blend-mode:screen;animation:light 7s ease both}.fog{position:absolute;inset:25% -30% -15%;background:radial-gradient(ellipse at 25% 65%,#b3c6ae55,transparent 48%),radial-gradient(ellipse at 70% 35%,#bfd1b33b,transparent 45%);animation:mist 7s ease-out both}.near{position:absolute;inset:-5%;width:110%;height:110%;fill:#061d18;animation:near 7s ease-out both}.shade{position:absolute;inset:0;background:linear-gradient(#081c1866,transparent 25%,#071a1833 60%,#071a18e6),radial-gradient(ellipse,transparent 25%,#06191377)}.frame{position:absolute;inset:18px;border:1px solid #e4e4bf20;pointer-events:none}header{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:38px 4.8vw}.brand{display:flex;gap:13px;align-items:center;font-size:10px;letter-spacing:.19em;line-height:1.8;text-transform:uppercase}.mark{width:35px;height:42px;stroke:var(--gold);fill:none;stroke-width:1.1}.skip{display:inline-flex;gap:24px;align-items:center;min-height:44px;color:var(--ivory);font-size:12px;text-decoration:none;border-bottom:1px solid #dfd8b87a}.skip:hover{color:#ffe5a5}main{flex:1;display:grid;place-items:center;position:relative;min-height:350px;margin:0 5vw}.chapter{grid-area:1/1;text-align:center;max-width:100%;opacity:0;pointer-events:none}.kicker{font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);margin:0 0 28px}.intro h2{font:italic 400 clamp(35px,5vw,70px)/1.15 Georgia,serif;margin:0}.intro .small{font:12px/1.5 Arial,sans-serif;letter-spacing:.1em;margin-top:26px;color:#d9e1ce}.place h1{font:400 clamp(42px,10vw,158px)/1.1 Georgia,serif;letter-spacing:-.055em;margin:0 0 20px}.place .subtitle{font:italic clamp(19px,2.2vw,30px)/1.4 Georgia,serif;margin:0;color:#e6e4ce}.hairline{height:1px;width:60px;background:var(--gold);margin:30px auto}.museum h2{font:400 clamp(36px,6vw,82px)/1.04 Georgia,serif;letter-spacing:-.035em;margin:0}.museum p:last-child{font-size:14px;line-height:1.65;color:#e0e4d2;margin-top:25px}.intro{animation:intro 7s both}.place{animation:place 7s both}.museum{animation:museum 7s both}footer{padding:28px 4.8vw 38px;display:grid;grid-template-columns:1fr 260px 1fr;gap:30px;align-items:end}.location{font-size:10px;letter-spacing:.17em;line-height:1.8;text-transform:uppercase;color:#c5cebc}.location span{display:block;color:#91a594;font-size:9px;margin-top:7px}.transport{text-align:center}.status{font-size:10px;letter-spacing:.06em;color:#c8cfb9;font-variant-numeric:tabular-nums}.track{height:1px;background:#dce3c231;margin:14px 0}.track i{display:block;height:100%;background:var(--gold);transform-origin:left;animation:progress 7s linear both}.pause{background:none;border:0;color:#d8dec9;min-height:32px;font-size:11px;cursor:pointer}.edition{text-align:right;color:#b6c4b2;font:italic 17px Georgia,serif}.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}.paused *{animation-play-state:paused!important}.leaving .landscape{transition:opacity .25s;opacity:.35}[hidden]{display:none!important}
+@keyframes camera{from{transform:scale(1.13) translateY(1%)}to{transform:scale(1) translateY(-1%)}}@keyframes near{from{transform:scale(1.08)}to{transform:scale(1.2) translateX(-1%)}}@keyframes mist{from{transform:translateX(-7%);opacity:.4}to{transform:translateX(8%);opacity:.8}}@keyframes light{from{opacity:.2;transform:rotate(-5deg)}to{opacity:1;transform:rotate(3deg)}}@keyframes intro{0%{opacity:0;transform:translateY(12px)}10%,22%{opacity:1;transform:none}28%,100%{opacity:0;transform:translateY(-12px)}}@keyframes place{0%,28%{opacity:0;transform:translateY(18px) scale(.97)}38%,57%{opacity:1;transform:none}64%,100%{opacity:0;transform:translateY(-12px) scale(1.02)}}@keyframes museum{0%,64%{opacity:0;transform:translateY(18px)}75%,100%{opacity:1;transform:none}}@keyframes progress{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@media(max-width:600px){header{padding:30px 28px}.brand{font-size:8px;letter-spacing:.12em;gap:8px}.mark{width:27px}.skip{font-size:11px;gap:10px}.frame{inset:12px}main{margin:0 24px;min-height:320px}.kicker{font-size:8px;letter-spacing:.23em}.place h1{font-size:clamp(36px,10.6vw,64px)}footer{padding:22px 28px 28px;grid-template-columns:1fr;gap:18px}.transport{grid-row:1;width:min(260px,100%);justify-self:center}.location{text-align:center;font-size:8px}.edition{display:none}.forest{background-position:53% center}.museum p:last-child{font-size:12px}.hairline{margin:22px auto}}
+@media(max-height:520px) and (min-width:601px){header{padding:20px 4.8vw}main{min-height:200px}.kicker{margin-bottom:12px}.place h1{font-size:70px}.museum h2{font-size:46px}.intro h2{font-size:42px}.hairline{margin:14px auto}footer{padding:12px 4.8vw 20px}.museum p:last-child{margin-top:12px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.intro,.place{visibility:hidden}.museum{opacity:1}.forest{transform:none}.fog{opacity:.5}.track{display:none}}
 </style>
+<noscript><style>.intro,.place{display:none}.museum{opacity:1;animation:none}.transport{display:none}</style></noscript>
 </head>
 <body>
-<div class="scene" aria-hidden="true"><div class="stars"></div><div class="lightbeam"></div><div class="scene-label scene-label-one">01 / ЛЕС ПРОБУЖДАЕТСЯ</div><div class="scene-label scene-label-two">02 / ИСТОРИЯ ОЖИВАЕТ</div><div class="scene-label scene-label-three">03 / ПРИКЛЮЧЕНИЕ НАЧИНАЕТСЯ</div><div class="orb"></div><div class="ridge back"></div><div class="ridge"></div><div class="ridge front"></div><div class="grain"></div></div>
-<main>
-<div class="intro-title" aria-hidden="true">Там, где начинается история...</div><div class="eyebrow">Виштынецкая возвышенность · Роминтская пуща</div>
-<div class="symbol" aria-hidden="true">✦</div>
-<h1>Краснолесье<span>место силы природы</span></h1>
-<p class="subtitle">Там, где лес хранит истории, а каждое путешествие становится открытием.</p>
-<div class="rule" aria-hidden="true"></div>
-<a class="action" id="go" href="https://vishtynets.ru/">Открыть Виштынецкий экомузей <span aria-hidden="true">↗</span></a>
-<div id="notice" class="notice" hidden><strong id="notice-title"></strong><p id="notice-text"></p></div>
-<div class="progress" aria-hidden="true"><span></span></div>
-<div id="timer" aria-live="off">Переход через 7 секунд</div>
+<div class="experience" id="experience">
+<div class="landscape" aria-hidden="true"><div class="forest"></div><div class="rays"></div><div class="fog"></div><svg class="near" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice"><path d="M85 1000 116 0h45l-14 1000ZM138 300 0 155v-30l140 124ZM145 440 285 219l9 13-151 265ZM1460 1000 1428 0h61l45 1000ZM1460 330 1600 138v50l-127 219ZM1446 202 1314 54l-13 8 145 204Z"/></svg><div class="shade"></div></div>
+<div class="frame" aria-hidden="true"></div>
+<header><div class="brand"><svg class="mark" viewBox="0 0 35 42" aria-hidden="true"><path d="M2 40V17a15.5 15.5 0 0 1 31 0v23ZM17.5 35V8m0 5-7 8m7-3 8 9m-8-3-10 9"/></svg><span>Виштынецкий<br>экомузей</span></div><a class="skip" href="https://vishtynets.ru/">Перейти сейчас <span aria-hidden="true">↗</span></a></header>
+<main aria-label="Краснолесье — приглашение в Виштынецкий экомузей">
+<section class="chapter intro" aria-hidden="true"><p class="kicker">01 / Пробуждение леса</p><h2>У каждого леса<br>есть своя история.</h2><p class="small">Прислушайтесь к Роминтской пуще</p></section>
+<section class="chapter place"><p class="kicker">02 / Место, которое остаётся с вами</p><h1>Краснолесье</h1><p class="subtitle">Там, где природа хранит историю</p><div class="hairline" aria-hidden="true"></div></section>
+<section class="chapter museum"><p class="kicker">03 / Продолжите путешествие</p><h2>Виштынецкий<br><em>экомузей</em></h2><p>Откройте природу, людей и истории<br>Виштынецкого края.</p></section>
 </main>
-<footer>КРАСНОЛЕСЬЕ · КАЛИНИНГРАДСКАЯ ОБЛАСТЬ</footer>
+<footer><div class="location">Роминтская пуща<span>Калининградская область</span></div><div class="transport"><div class="status" id="status">На сайт музея через 7 секунд</div><div class="track" aria-hidden="true"><i></i></div><button class="pause" id="pause" type="button" hidden>Приостановить переход</button></div><div class="edition">Природа. Память. Открытия.</div></footer>
+</div>
 <script>
-"use strict";
-const config={redirectUrl:"https://vishtynets.ru/",seconds:7,announcement:{enabled:false,title:"",text:""}};
-const notice=document.getElementById("notice");
-if(config.announcement.enabled&&config.announcement.title){
- document.getElementById("notice-title").textContent=config.announcement.title;
- document.getElementById("notice-text").textContent=config.announcement.text;
- notice.hidden=false;
-}
-const timer=document.getElementById("timer");
-const started=performance.now();
-const delay=config.seconds*1000;
-const redirect=setTimeout(()=>location.replace(config.redirectUrl),delay);
-const interval=setInterval(()=>{
- const remaining=Math.max(0,Math.ceil((delay-(performance.now()-started))/1000));
- timer.textContent="Переход через "+remaining+" сек.";
- if(remaining===0)clearInterval(interval);
-},250);
-document.getElementById("go").addEventListener("click",()=>{clearTimeout(redirect);clearInterval(interval)});
+(()=>{'use strict';const root=document.getElementById('experience'),status=document.getElementById('status'),pause=document.getElementById('pause');let remaining=7000,started=performance.now(),timeout,interval,paused=false;const target='https://vishtynets.ru/';function left(){return Math.max(0,remaining-(performance.now()-started))}function update(){status.textContent='На сайт музея через '+Math.ceil(left()/1000)+' сек.';if(left()<250)root.classList.add('leaving')}function run(){started=performance.now();timeout=setTimeout(()=>{clearInterval(interval);location.replace(target)},remaining);interval=setInterval(update,100)}pause.hidden=false;pause.addEventListener('click',()=>{if(!paused){remaining=left();clearTimeout(timeout);clearInterval(interval);root.classList.add('paused');root.classList.remove('leaving');status.textContent='Переход приостановлен';pause.textContent='Продолжить путешествие'}else{root.classList.remove('paused');pause.textContent='Приостановить переход';run();update()}paused=!paused});document.querySelector('.skip').addEventListener('click',()=>{clearTimeout(timeout);clearInterval(interval)});run()})();
 </script>
 </body>
 </html>
