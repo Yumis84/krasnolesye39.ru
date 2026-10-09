@@ -2,30 +2,62 @@
 <html lang="ru">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="robots" content="noindex,nofollow">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<meta name="theme-color" content="#183c2c">
-<title>Краснолесье | Виштынецкий экомузей</title>
-<meta name="description" content="Добро пожаловать в Краснолесье. Переход на сайт Виштынецкого экомузея.">
+<meta name="theme-color" content="#081a16">
+<title>Краснолесье · Виштынецкий экомузей</title>
+<meta name="description" content="Краснолесье. Путешествие в мир природы и истории Виштынецкого края.">
 <style>
-*{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;padding:20px;background:radial-gradient(circle at 50% 0,#456b4a,#183c2c 75%);font:16px/1.5 system-ui,-apple-system,Segoe UI,sans-serif;color:#fff}
-main{width:min(100%,540px);text-align:center;padding:42px 24px;border:1px solid #ffffff30;border-radius:24px;background:#ffffff12;box-shadow:0 18px 65px #091f1680;backdrop-filter:blur(6px)}
-.mark{font-size:42px;margin-bottom:12px}h1{font-size:clamp(27px,6vw,40px);line-height:1.15;margin:0 0 10px}h2{font-size:18px;font-weight:500;margin:0 0 22px;color:#d6e7d6}p{color:#e0eee2;margin:0 0 24px}
-a{display:inline-block;background:#fff;color:#183c2c;padding:14px 26px;border-radius:12px;font-weight:750;text-decoration:none}a:hover{background:#e4f0df}a:focus-visible{outline:3px solid #ffdf83;outline-offset:4px}
-small{display:block;margin-top:22px;color:#d3e5d8}.notice{margin:22px auto 0;max-width:420px;padding:16px;border-radius:12px;background:#ffffff15;border:1px solid #ffffff25}.notice[hidden]{display:none}
+:root{color-scheme:dark;--cream:#f7f3e7;--mist:#b9d1c2;--gold:#dfc68f}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:#081a16}
+body{min-height:100svh;display:grid;place-items:center;overflow:hidden;color:var(--cream);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+.scene{position:fixed;inset:0;z-index:0;background:radial-gradient(ellipse 70% 55% at 50% 42%,#2e5947 0%,#132e28 47%,#081a16 100%)}
+.scene:before{content:"";position:absolute;inset:-10%;background:radial-gradient(ellipse 45% 55% at 50% 48%,#c7c7a319,transparent 75%);animation:glow 3s ease-in-out both}
+.scene:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#081a1614 0%,transparent 35%,#081a1699 100%)}
+.ridge{position:absolute;inset:auto -10% 0;height:45%;background:#0b211c;clip-path:polygon(0 67%,7% 57%,12% 62%,19% 39%,26% 58%,34% 26%,41% 53%,49% 20%,56% 49%,64% 29%,71% 55%,80% 36%,87% 60%,94% 42%,100% 57%,100% 100%,0 100%);opacity:.55}
+.ridge.back{height:55%;background:#224538;opacity:.48;transform:translateY(15%) scaleX(-1)}
+.ridge.front{height:35%;opacity:.9;transform:translateY(25%)}
+.orb{position:absolute;left:50%;top:43%;width:min(75vw,600px);aspect-ratio:1;transform:translate(-50%,-50%);border:1px solid #e6f4df18;border-radius:50%;box-shadow:0 0 0 70px #d9e7cf05,0 0 0 140px #d9e7cf03}
+.grain{position:absolute;inset:0;opacity:.14;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.4'/%3E%3C/svg%3E");pointer-events:none}
+main{position:relative;z-index:1;width:min(100%,850px);padding:48px 22px;text-align:center}
+.eyebrow{font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);font-weight:700;animation:rise .65s both}
+.symbol{display:flex;justify-content:center;align-items:center;margin:24px auto 19px;width:76px;height:76px;border:1px solid #e9dfbd65;border-radius:50%;font:40px/1 Georgia,serif;color:#e9dfbd;box-shadow:0 0 55px #b9d1c21b;animation:rise .7s .08s both}
+h1{margin:0;font:400 clamp(44px,8.8vw,100px)/.98 Georgia,"Times New Roman",serif;letter-spacing:-.055em;text-wrap:balance;text-shadow:0 6px 35px #0005;animation:rise .75s .15s both}
+h1 span{display:block;font-style:italic;color:#d5e5d5;font-size:.76em;margin-top:7px}
+.subtitle{font-size:clamp(13px,2vw,17px);line-height:1.65;color:#c7d9cd;margin:25px auto 0;max-width:550px;animation:rise .7s .27s both}
+.rule{height:1px;width:74px;margin:27px auto;background:linear-gradient(90deg,transparent,var(--gold),transparent);animation:rise .7s .35s both}
+.action{display:inline-flex;align-items:center;gap:12px;min-height:52px;padding:0 23px;border:1px solid #f4f0e35c;border-radius:99px;background:#f7f3e712;color:var(--cream);text-decoration:none;font-size:14px;font-weight:650;backdrop-filter:blur(12px);transition:background .2s,transform .2s;animation:rise .7s .43s both}
+.action:hover{background:#f7f3e72d;transform:translateY(-2px)}
+.action:focus-visible{outline:3px solid var(--gold);outline-offset:4px}
+.progress{width:min(230px,75vw);height:2px;background:#ffffff32;margin:30px auto 12px;overflow:hidden;border-radius:9px}
+.progress>span{display:block;width:100%;height:100%;background:linear-gradient(90deg,#a9cdb4,var(--gold));transform-origin:left;animation:shrink 3s linear both}
+#timer{font-size:11px;letter-spacing:.09em;color:#b9d1c2}
+footer{position:fixed;bottom:max(18px,env(safe-area-inset-bottom));left:0;right:0;text-align:center;z-index:1;font-size:10px;letter-spacing:.18em;color:#b9d1c280}
+.notice{margin:15px auto 0;max-width:430px;padding:12px 16px;border:1px solid #ffffff33;border-radius:12px;background:#ffffff12;color:var(--cream);font-size:13px}
+.notice[hidden]{display:none}
+@keyframes rise{from{opacity:0;transform:translateY(17px)}to{opacity:1;transform:translateY(0)}}
+@keyframes glow{from{opacity:.35;transform:scale(.95)}to{opacity:1;transform:scale(1.04)}}
+@keyframes shrink{to{transform:scaleX(0)}}
+@media(max-width:500px){main{padding:32px 20px}.symbol{width:64px;height:64px;font-size:34px;margin-top:20px}.subtitle{margin-top:20px}.rule{margin:22px auto}.progress{margin-top:25px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
+<div class="scene" aria-hidden="true"><div class="orb"></div><div class="ridge back"></div><div class="ridge"></div><div class="ridge front"></div><div class="grain"></div></div>
 <main>
-<div class="mark" aria-hidden="true">🌲</div>
-<h1>Добро пожаловать в Краснолесье</h1>
-<h2>Виштынецкий экомузей</h2>
-<p>История, природа и удивительные места Виштынецкого края.</p>
-<a id="go" href="https://vishtynets.ru/">Перейти на сайт музея →</a>
-<div id="notice" class="notice" hidden><strong id="notice-title"></strong><p id="notice-text" style="margin:8px 0 0"></p></div>
-<small id="timer" aria-live="off">Автоматический переход через 3 секунды</small>
+<div class="eyebrow">Виштынецкая возвышенность · Роминтская пуща</div>
+<div class="symbol" aria-hidden="true">✦</div>
+<h1>Краснолесье<span>место силы природы</span></h1>
+<p class="subtitle">Там, где лес хранит истории, а каждое путешествие становится открытием.</p>
+<div class="rule" aria-hidden="true"></div>
+<a class="action" id="go" href="https://vishtynets.ru/">Открыть Виштынецкий экомузей <span aria-hidden="true">↗</span></a>
+<div id="notice" class="notice" hidden><strong id="notice-title"></strong><p id="notice-text"></p></div>
+<div class="progress" aria-hidden="true"><span></span></div>
+<div id="timer" aria-live="off">Переход через 3 секунды</div>
 </main>
+<footer>КРАСНОЛЕСЬЕ · КАЛИНИНГРАДСКАЯ ОБЛАСТЬ</footer>
 <script>
 "use strict";
 const config={redirectUrl:"https://vishtynets.ru/",seconds:3,announcement:{enabled:false,title:"",text:""}};
@@ -35,14 +67,16 @@ if(config.announcement.enabled&&config.announcement.title){
  document.getElementById("notice-text").textContent=config.announcement.text;
  notice.hidden=false;
 }
-let remaining=Math.max(0,Math.floor(config.seconds));
 const timer=document.getElementById("timer");
-function tick(){
- if(remaining<=0){location.replace(config.redirectUrl);return;}
- timer.textContent="Автоматический переход через "+remaining+" сек.";
- remaining-=1;setTimeout(tick,1000);
-}
-tick();
+const started=performance.now();
+const delay=config.seconds*1000;
+const redirect=setTimeout(()=>location.replace(config.redirectUrl),delay);
+const interval=setInterval(()=>{
+ const remaining=Math.max(0,Math.ceil((delay-(performance.now()-started))/1000));
+ timer.textContent="Переход через "+remaining+" сек.";
+ if(remaining===0)clearInterval(interval);
+},250);
+document.getElementById("go").addEventListener("click",()=>{clearTimeout(redirect);clearInterval(interval)});
 </script>
 </body>
 </html>
