@@ -13,7 +13,8 @@
 @keyframes camera{from{transform:scale(1.13) translateY(1%)}to{transform:scale(1) translateY(-1%)}}@keyframes near{from{transform:scale(1.08)}to{transform:scale(1.2) translateX(-1%)}}@keyframes mist{from{transform:translateX(-7%);opacity:.4}to{transform:translateX(8%);opacity:.8}}@keyframes light{from{opacity:.2;transform:rotate(-5deg)}to{opacity:1;transform:rotate(3deg)}}@keyframes intro{0%{opacity:0;transform:translateY(12px)}10%,22%{opacity:1;transform:none}28%,100%{opacity:0;transform:translateY(-12px)}}@keyframes place{0%,28%{opacity:0;transform:translateY(18px) scale(.97)}38%,57%{opacity:1;transform:none}64%,100%{opacity:0;transform:translateY(-12px) scale(1.02)}}@keyframes museum{0%,64%{opacity:0;transform:translateY(18px)}75%,100%{opacity:1;transform:none}}@keyframes progress{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 @media(max-width:600px){header{padding:30px 28px}.brand{font-size:8px;letter-spacing:.12em;gap:8px}.mark{width:27px}.skip{font-size:11px;gap:10px}.frame{inset:12px}main{margin:0 24px;min-height:320px}.kicker{font-size:8px;letter-spacing:.23em}.place h1{font-size:clamp(36px,10.6vw,64px)}footer{padding:22px 28px 28px;grid-template-columns:1fr;gap:18px}.transport{grid-row:1;width:min(260px,100%);justify-self:center}.location{text-align:center;font-size:8px}.edition{display:none}.forest{background-position:53% center}.museum p:last-child{font-size:12px}.hairline{margin:22px auto}}
 @media(max-height:520px) and (min-width:601px){header{padding:20px 4.8vw}main{min-height:200px}.kicker{margin-bottom:12px}.place h1{font-size:70px}.museum h2{font-size:46px}.intro h2{font-size:42px}.hairline{margin:14px auto}footer{padding:12px 4.8vw 20px}.museum p:last-child{margin-top:12px}}
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.intro,.place{visibility:hidden}.museum{opacity:1}.forest{transform:none}.fog{opacity:.5}.track{display:none}}
+@media(prefers-reduced-motion:reduce){.experience:not(.motion-enabled) *{animation:none!important;transition:none!important}.experience:not(.motion-enabled) .intro,.experience:not(.motion-enabled) .place{visibility:hidden}.experience:not(.motion-enabled) .museum{opacity:1}.experience:not(.motion-enabled) .forest{transform:none}.experience:not(.motion-enabled) .fog{opacity:.5}.experience:not(.motion-enabled) .track{display:none}}
+.experience.restarting *{animation:none!important}.controls{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}.motion{color:#f3eedb;text-decoration:underline;text-underline-offset:4px}
 </style>
 <noscript><style>.intro,.place{display:none}.museum{opacity:1;animation:none}.transport{display:none}</style></noscript>
 </head>
@@ -27,10 +28,72 @@
 <section class="chapter place"><p class="kicker">02 / Место, которое остаётся с вами</p><h1>Краснолесье</h1><p class="subtitle">Там, где природа хранит историю</p><div class="hairline" aria-hidden="true"></div></section>
 <section class="chapter museum"><p class="kicker">03 / Продолжите путешествие</p><h2>Виштынецкий<br><em>экомузей</em></h2><p>Откройте природу, людей и истории<br>Виштынецкого края.</p></section>
 </main>
-<footer><div class="location">Роминтская пуща<span>Калининградская область</span></div><div class="transport"><div class="status" id="status">На сайт музея через 7 секунд</div><div class="track" aria-hidden="true"><i></i></div><button class="pause" id="pause" type="button" hidden>Приостановить переход</button></div><div class="edition">Природа. Память. Открытия.</div></footer>
+<footer><div class="location">Роминтская пуща<span>Калининградская область</span></div><div class="transport"><div class="status" id="status">На сайт музея через 7 секунд</div><div class="track" aria-hidden="true"><i></i></div><div class="controls"><button class="pause" id="pause" type="button" hidden>Приостановить переход</button><button class="pause motion" id="motion" type="button" hidden>Повторить анимацию</button></div></div><div class="edition">Природа. Память. Открытия.</div></footer>
 </div>
 <script>
-(()=>{'use strict';const root=document.getElementById('experience'),status=document.getElementById('status'),pause=document.getElementById('pause');let remaining=7000,started=performance.now(),timeout,interval,paused=false;const target='https://vishtynets.ru/';function left(){return Math.max(0,remaining-(performance.now()-started))}function update(){status.textContent='На сайт музея через '+Math.ceil(left()/1000)+' сек.';if(left()<250)root.classList.add('leaving')}function run(){started=performance.now();timeout=setTimeout(()=>{clearInterval(interval);location.replace(target)},remaining);interval=setInterval(update,100)}pause.hidden=false;pause.addEventListener('click',()=>{if(!paused){remaining=left();clearTimeout(timeout);clearInterval(interval);root.classList.add('paused');root.classList.remove('leaving');status.textContent='Переход приостановлен';pause.textContent='Продолжить путешествие'}else{root.classList.remove('paused');pause.textContent='Приостановить переход';run();update()}paused=!paused});document.querySelector('.skip').addEventListener('click',()=>{clearTimeout(timeout);clearInterval(interval)});run()})();
+(() => {
+  'use strict';
+  const root = document.getElementById('experience');
+  const status = document.getElementById('status');
+  const pause = document.getElementById('pause');
+  const motion = document.getElementById('motion');
+  const preference = matchMedia('(prefers-reduced-motion: reduce)');
+  const target = 'https://vishtynets.ru/';
+  let remaining = 7000, started, timeout, interval, paused = false;
+  function left() { return Math.max(0, remaining - (performance.now() - started)); }
+  function stop() { clearTimeout(timeout); clearInterval(interval); }
+  function update() {
+    status.textContent = 'На сайт музея через ' + Math.ceil(left() / 1000) + ' сек.';
+    if (left() < 250) root.classList.add('leaving');
+  }
+  function run() {
+    started = performance.now();
+    timeout = setTimeout(() => { stop(); location.replace(target); }, remaining);
+    interval = setInterval(update, 100);
+  }
+  function labelMotion() {
+    motion.textContent = preference.matches && !root.classList.contains('motion-enabled')
+      ? 'Включить анимацию' : 'Повторить анимацию';
+  }
+  pause.hidden = motion.hidden = false;
+  labelMotion();
+  preference.addEventListener('change', () => {
+    root.classList.remove('motion-enabled');
+    labelMotion();
+  });
+  motion.addEventListener('click', () => {
+    stop();
+    remaining = 7000;
+    paused = false;
+    root.classList.remove('paused', 'leaving');
+    root.classList.add('motion-enabled', 'restarting');
+    // Reflow restarts all CSS scenes, including interrupted scenes.
+    void root.offsetWidth;
+    root.classList.remove('restarting');
+    pause.textContent = 'Приостановить переход';
+    labelMotion();
+    run();
+    update();
+  });
+  pause.addEventListener('click', () => {
+    if (!paused) {
+      remaining = left();
+      stop();
+      root.classList.add('paused');
+      root.classList.remove('leaving');
+      status.textContent = 'Переход приостановлен';
+      pause.textContent = 'Продолжить путешествие';
+    } else {
+      root.classList.remove('paused');
+      pause.textContent = 'Приостановить переход';
+      run();
+      update();
+    }
+    paused = !paused;
+  });
+  document.querySelector('.skip').addEventListener('click', stop);
+  run();
+})();
 </script>
 </body>
 </html>
