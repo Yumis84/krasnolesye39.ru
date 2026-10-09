@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1320 360" role="img" aria-labelledby="title desc">
+  <title id="title">Виштынецкий экомузей</title>
+  <desc id="desc">Логотип с холмами, лесом и отражением в воде. Краснолесье, Роминтская пуща.</desc>
+  <g fill="none" stroke="#f3eedb" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M34 182 C102 121 160 86 235 92 C292 96 332 127 380 124 C423 121 456 101 500 106 C551 112 594 146 647 182" stroke-width="7"/>
+    <path d="M38 224 C115 173 167 145 231 151 C287 156 322 189 366 190 C416 192 452 151 500 155 C550 159 592 190 638 221" stroke-width="17"/>
+    <path d="M250 223 C301 200 344 164 389 163 C438 162 475 203 523 210 C559 215 591 207 626 198" stroke-width="5" opacity=".72"/>
+    <path d="M18 244 H650" stroke-width="4"/>
+    <path d="M91 267 C147 285 181 310 229 309 C269 307 295 286 330 283" stroke-width="5" opacity=".58"/>
+    <path d="M221 270 C275 290 311 319 361 318 C412 318 449 283 500 281 C548 280 579 294 620 303" stroke-width="7" opacity=".72"/>
+    <path d="M323 309 C359 324 384 337 420 337 C454 337 484 324 516 315" stroke-width="5" opacity=".55"/>
+    <path d="M355 345 H451" stroke-width="5" opacity=".55"/>
+    <path d="M379 356 H426" stroke-width="4" opacity=".42"/>
+  </g>
+  <g fill="#f3eedb">
+    <path d="M245 98 l18-34 18 34 h-9 l15 24 h-49 l15-24z"/>
+    <path d="M278 100 l14-28 14 28 h-7 l12 20 h-38 l12-20z"/>
+    <path d="M316 107 l20-43 20 43 h-10 l16 29 h-52 l16-29z"/>
+    <path d="M359 108 l15-31 15 31 h-8 l13 23 h-40 l13-23z"/>
+    <path d="M393 112 l13-27 13 27 h-7 l11 20 h-34 l11-20z"/>
+    <path d="M423 115 l11-23 11 23 h-6 l10 17 h-30 l10-17z"/>
+  </g>
+  <g transform="translate(700 0)">
+    <text x="0" y="170" fill="#f3eedb" font-family="Georgia,'Times New Roman',serif" font-size="74" font-weight="600" letter-spacing="-1.5">Виштынецкий экомузей</text>
+    <text x="34" y="232" fill="#d4bc83" font-family="Inter,Arial,sans-serif" font-size="28" font-weight="500" letter-spacing="7">Краснолесье • Роминтская пуща</text>
+  </g>
+</svg>
