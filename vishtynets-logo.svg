@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1320 360" role="img" aria-labelledby="title desc">
-  <title id="title">Виштынецкий экомузей</title>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 670 360" role="img" aria-labelledby="title desc">
+  <title id="title">Силуэт холмов Виштынецкого края</title>
   <desc id="desc">Логотип с холмами, лесом и отражением в воде. Краснолесье, Роминтская пуща.</desc>
   <g fill="none" stroke="#f3eedb" stroke-linecap="round" stroke-linejoin="round">
     <path d="M34 182 C102 121 160 86 235 92 C292 96 332 127 380 124 C423 121 456 101 500 106 C551 112 594 146 647 182" stroke-width="7"/>
@@ -19,9 +19,5 @@
     <path d="M359 108 l15-31 15 31 h-8 l13 23 h-40 l13-23z"/>
     <path d="M393 112 l13-27 13 27 h-7 l11 20 h-34 l11-20z"/>
     <path d="M423 115 l11-23 11 23 h-6 l10 17 h-30 l10-17z"/>
-  </g>
-  <g transform="translate(700 0)">
-    <text x="0" y="170" fill="#f3eedb" font-family="Georgia,'Times New Roman',serif" font-size="74" font-weight="600" letter-spacing="-1.5">Виштынецкий экомузей</text>
-    <text x="34" y="232" fill="#d4bc83" font-family="Inter,Arial,sans-serif" font-size="28" font-weight="500" letter-spacing="7">Краснолесье • Роминтская пуща</text>
   </g>
 </svg>
