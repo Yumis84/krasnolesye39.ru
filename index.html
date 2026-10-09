@@ -24,11 +24,11 @@ small{display:block;margin-top:22px;color:#d3e5d8}.notice{margin:22px auto 0;max
 <p>История, природа и удивительные места Виштынецкого края.</p>
 <a id="go" href="https://vishtynets.ru/">Перейти на сайт музея →</a>
 <div id="notice" class="notice" hidden><strong id="notice-title"></strong><p id="notice-text" style="margin:8px 0 0"></p></div>
-<small id="timer" aria-live="off">Автоматический переход через 5 секунд</small>
+<small id="timer" aria-live="off">Автоматический переход через 3 секунды</small>
 </main>
 <script>
 "use strict";
-const config={redirectUrl:"https://vishtynets.ru/",seconds:5,announcement:{enabled:false,title:"",text:""}};
+const config={redirectUrl:"https://vishtynets.ru/",seconds:3,announcement:{enabled:false,title:"",text:""}};
 const notice=document.getElementById("notice");
 if(config.announcement.enabled&&config.announcement.title){
  document.getElementById("notice-title").textContent=config.announcement.title;
